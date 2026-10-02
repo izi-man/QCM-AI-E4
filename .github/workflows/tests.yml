@@ -38,3 +38,21 @@ jobs:
       - name: Lancer les tests
         run: |
           python -m pytest
+      - name: Construire l'image Docker
+        run: |
+          docker build -t qcm-ai-e4 .
+
+      - name: Lancer le conteneur
+        run: |
+          docker run -d -p 8000:8000 --name qcm-ai-e4 qcm-ai-e4
+
+      - name: Vérifier l'application
+        run: |
+          sleep 5
+          curl --fail http://localhost:8000/health
+
+      - name: Arrêter le conteneur
+        if: always()
+        run: |
+          docker stop qcm-ai-e4 || true
+          docker rm qcm-ai-e4 || true
