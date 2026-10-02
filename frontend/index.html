@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QCM AI - E4</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="qcm-container">
+
+        <!-- En-tête -->
+        <header class="qcm-header">
+            <div class="header-title">
+                <span class="question-icon">?</span>
+                <span id="question-title">Question 1</span>
+            </div>
+
+            <span id="progress-text">1 / 5</span>
+        </header>
+
+
+        <!-- Barre de progression -->
+        <div class="progress-container">
+            <div id="progress"></div>
+        </div>
+
+
+        <!-- Question -->
+        <section class="question-section">
+
+            <h2 id="question">
+                Question
+            </h2>
+
+            <div id="answers"></div>
+
+        </section>
+
+
+        <!-- Bas de page -->
+        <div class="qcm-footer">
+
+            <span id="instruction">
+                Sélectionnez une réponse.
+            </span>
+
+            <button
+                id="validate-button"
+                disabled
+            >
+                Valider
+            </button>
+
+        </div>
+
+
+        <!-- Résultat -->
+        <section
+            id="result-section"
+            class="result-section hidden"
+        >
+
+            <div class="result-header">
+                <span class="result-icon">✓</span>
+
+                <h2>QCM terminé</h2>
+            </div>
+
+
+            <div class="result-score">
+
+                <span>Votre score</span>
+
+                <strong id="score">
+                    0 / 5
+                </strong>
+
+            </div>
+
+
+            <div class="result-details">
+
+                <div>
+                    <strong id="errors">0</strong>
+                    <span>Erreur(s)</span>
+                </div>
+
+                <div>
+                    <strong id="time">0 s</strong>
+                    <span>Temps moyen</span>
+                </div>
+
+            </div>
+
+
+            <div class="ai-result">
+
+                <h3>🤖 Analyse IA</h3>
+
+                <p id="ai-message">
+                    Analyse en cours...
+                </p>
+
+                <p>
+                    Confiance du modèle :
+                    <strong id="confidence">-- %</strong>
+                </p>
+
+            </div>
+
+
+            <button
+                id="restart-button"
+                class="restart-button"
+            >
+                Recommencer
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
