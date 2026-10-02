@@ -29,8 +29,12 @@ jobs:
       - name: Installer les dépendances
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m pip install -r requirements.txt
+
+      - name: Vérifier pytest
+        run: |
+          python -m pip show pytest
 
       - name: Lancer les tests
         run: |
-          python -m pytests
+          python -m pytest
